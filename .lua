@@ -10,7 +10,8 @@ CancelShop = Instance.new("TextButton"),
 ShlexLogo = Instance.new("ImageLabel"),
 SmallMessage = Instance.new("TextLabel"),
 Shadow = Instance.new("ImageLabel"),
-Other = Instance.new("Frame")
+Other = Instance.new("Frame"),
+Shadow_11 = Instance.new("ImageLabel")
 }
 
 Domain.Domain.Name = "Domain"
