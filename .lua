@@ -289,7 +289,7 @@ end
 
 
 Domain.CancelShop.MouseButton1Click:Connect(function()
-	Domain.ServerhopAnim.NoticeMessage.Text = " Successfully canceled"
+	Domain.ServerhopAnim.NoticeMessage.Text = "Successfully canceled"
 	Domain.LargeMsg.Text = "Stopped"
 	StopShop = true
 	local transitionInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quint)
@@ -300,5 +300,18 @@ Domain.CancelShop.MouseButton1Click:Connect(function()
 	tween:Play()
 	CloseShopMenu()
 end)
+
+function UI:Cancel(str,strng)
+	Domain.ServerhopAnim.NoticeMessage.Text = tostring(str) or "Successfully canceled"
+	Domain.LargeMsg.Text = tostring(strng) or "Stopped"
+	StopShop = true
+	local transitionInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quint)
+	local tween = game:GetService("TweenService"):Create(Domain.CancelShop, transitionInfo, {BackgroundTransparency = 1})
+	tween:Play()
+	local transitionInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quint)
+	local tween = game:GetService("TweenService"):Create(Domain.CancelShop, transitionInfo, {TextTransparency = 1})
+	tween:Play()
+	CloseShopMenu()
+end
 
 return UI
